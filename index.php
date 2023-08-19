@@ -13,7 +13,7 @@ elseif(isset($_GET['accreditation'])){
 }
 elseif(isset($_GET['join_accreditation'])){
     $css = './styles/join.css';
-    $page = './views/join_accreditation.html';
+    $page = './views/join_accreditation.php';
 }
 elseif(isset($_GET['accredited_school'])){
     $css = './styles/ind-school.css';
