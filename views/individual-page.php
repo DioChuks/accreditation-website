@@ -314,22 +314,31 @@ if (isset($_GET['sch_lec_id'])) {
     $stmt->execute();
     // Get the result
     $result = $stmt->get_result();
-    // Fetch the row
-    $row2 = $result->fetch_assoc();
-    // Close the statement
-    $stmt->close();
-
     ?>
     <div class="certificate__section">
         <div class="certificate__section__title">
             <h2>Certifications</h2>
         </div>
+        <?php
+        if ($result->num_rows > 0) {
+            $row2 = $result->fetch_assoc();
+            // Your code to display certificate items
+        ?>
         <div class="certificate__item styled">
             <div class="certificate__item__data"><h4><?php echo $row2['cert_title1']; ?></h4></div>
             <div class="certificate__item__data cert"><h5><a href="view_certificate.html">Click to view Certificate</a></h5></div>
+            <?php
+            
+        } else {
+            echo '<div class="certificate__item">
+            <div class="certificate__item__data">
+            <h4>No certificate data found.</h4></div>
+            </div>';
+        }
+        ?>
         </div>
         <?php 
-        if($row2['cert_title2'] != ''){
+        if(!empty($row2['cert_title2'])){
         ?>
         <div class="certificate__item">
             <div class="certificate__item__data"><h4><?php echo $row2['cert_title2']; ?></h4></div>
@@ -337,7 +346,7 @@ if (isset($_GET['sch_lec_id'])) {
         </div>
         <?php }?>
         <?php 
-        if($row2['cert_title3'] != ''){
+        if(!empty($row2['cert_title3'])){
         ?>
         <div class="certificate__item styled">
             <div class="certificate__item__data"><h4><?php echo $row2['cert_title3']; ?></h4></div>
@@ -367,12 +376,19 @@ if (isset($_GET['sch_lec_id'])) {
         </div>
         <div class="works__achievement">
             <div class="works__achievement__text">
+                <?php if($result->num_rows > 0){ ?>
                 <h4><?php echo $row3['work_title1']; ?></h4>
                 <p><?php echo $row3['work_desc1']; ?></p>
                 <button class="readmore btn">Read</button>
+                <?php 
+                }else{
+                    echo '
+            <h4>No work data found.</h4>';
+                }
+                ?>
             </div>
             <?php 
-        if($row['work_title2'] != ''){
+        if(!empty($row3['work_title2'])){
         ?>
             <div class="works__achievement__text">
                 <h4><?php echo $row3['work_title2']; ?></h4>
