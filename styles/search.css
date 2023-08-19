@@ -1,0 +1,103 @@
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding: 116px 160px 86.5px 160px;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 54.5px;
+    border: none;
+    left: -10%;
+    top: -10%;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+}
+/* Add Animation */
+@-webkit-keyframes animatetop {
+  from {top:-300px; opacity:0} 
+  to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+.modal {
+    max-height: 80vh; /* Set a maximum height for the dialog */
+}
+.modal-content {
+    max-height: 50vh; /* Allow content to take up full available height */
+    overflow-y: auto; /* Enable vertical scrollbar when content overflows */
+}
+.work-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    max-height: 40vh; /* Allow content to take up full available height */
+    overflow-y: auto; /* Enable vertical scrollbar when content overflows */
+}
+.work-details a{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    gap: 628px;
+    background: #fff;
+    border-radius: 0;
+    border-bottom: 1px solid #1B7339;
+    color: rgba(0, 0, 0, 0.70);
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.work-details a:hover{
+    transition: all .2s ease-in-out ;
+    transform: scale(.9) translateY(-2%);
+    box-shadow: -1rem -.5rem rgb(189, 189, 189 / 50%) inset ,
+    1rem -.5rem rgb(189, 189, 189 / 50%),
+    -.5rem  1rem rgb(189, 189, 189/ 50%) inset,
+    .5rem   1rem rgb(189, 189, 189/ 50%),
+    1rem     .5rem rgb(189, 189, 189/ 50%) inset,
+    -1rem      .5rem rgb(189, 189, 189/ 50%),
+    .5rem      1rem rgb(189, 189, 189/ 50%) inset,-.5rem-.5rem rgb(189, 189, 189/ 50%) inset,.5rem-.5remrgb(189, 189, 189/ 50%) inset;
+    
+}
+#searchBtn:hover{
+    cursor: pointer!important;
+    transition: all .2s ease-in-out;
+    transform: scale(.85);
+}

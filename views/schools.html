@@ -1,0 +1,182 @@
+    <section class="school__container">
+        <div class="school__box">
+            <div class="school__box__title">
+                <h2>Institutions in Nigeria</h2>
+            </div>
+            <div class="school__box__2">
+                <div class="school__box__body">
+                    <p>This website is your guide to the different tertiary institutions in the country of Nigeria. Find easy access to the qualifications of lecturers of your dream school.</p>
+                </div>
+                <div class="school__box__body__schools">
+                    <span>No. of Universities <br>14</span>
+                    <span>No. of Private Schools <br>60</span>
+                    <span>No. of Colleges of Education <br>150</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <style>
+        #searchBtn:hover{
+            cursor: pointer!important;
+            transition: all .2s ease-in-out;
+            transform: scale(.85);
+        }
+    </style>
+    <section class="search__container__right">
+        <div class="search__box__right">
+            <div class="search__box__input__right">
+                <span class="search__box__icon__right" id="searchBtn">
+                    <img src="Iconly/Light/Search.svg" alt="search">
+                </span>
+                <input type="text" name="search_input" id="searchInstitution">
+            </div>
+            <div id="myModal2" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <div class="work-details" id="searchResultField">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="institution__table__container">
+        <div style="width:80%" class="institution__table__content">
+            <div class="institution__table__head">
+                <div class="table__head__title">Name of Institution</div>
+                <div class="table__head__title">Location</div>
+                <div class="table__head__title">Type of Institution</div>
+                <div class="table__head__title">No. of Staff</div>
+            </div>
+            <div class="table__data__container" id="schoolsTable">
+                
+            </div>
+        </div>
+        <div class="pagination">
+            <a href="" target="_self"><<</a> 1 of 20 <a href="" target="_self">>></a>
+        </div>
+    </section>
+    <script>
+        var lastSchoolId = 0;
+        var maxRows = 7;
+        // Function to fetch new deposits and update the table
+        function fetchData() {
+            $.ajax({
+                url: "./php/fetch_schools.php",
+                type: "GET",
+                data: { lastSchoolId: lastSchoolId },
+                dataType: "json",
+                success: function (response) {
+                if (response.length > 0) {
+                    lastSchoolId = response[response.length - 1].school_id;
+                    updateElement(response);
+                }
+            },
+            error: function (xhr, status, error) {
+                console.log("Error: " + error);
+            },
+            complete: function () {
+                // Set a timeout to execute the fetchDeposits function again after 5 seconds
+                setTimeout(fetchData, 1000000); // 5000 milliseconds = 5 seconds
+            },
+            });
+        }
+          
+          // Function to update the table with new deposits
+          function updateElement(schools) {
+            var table = $("#schoolsTable");
+            var rows = table.find("a");
+          
+            // Remove excess rows if the table already has more than the maximum allowed rows
+            if (rows.length >= maxRows) {
+                rows.slice(maxRows).remove();
+            }
+          
+            // Append new rows for the fetched deposits
+            $.each(schools, function (index, school) {
+                if (rows.length >= maxRows) {
+                    return false; // Exit the loop if maximum rows limit is reached
+            }
+          
+            var row = "<a href='?accredited_school&sch_id="+ school.school_id +"'>" +
+                "<div class='table__data'>"+
+                "<div class='table__data__text institution'>" + school.school_name + "</div>" +
+                "<div class='table__data__text location'>" + school.school_location + "</div>" +
+                "<div class='table__data__text typeof'>" + school.school_type + "</div>" +
+                "<div class='table__data__text staff'>" + school.school_staff_no + "</div>" +
+                "</div>" +
+                "</a>";
+            table.append(row);
+            });
+        }
+
+        fetchData();
+
+        // for search
+        const s = document.getElementById("searchBtn");
+        const modalY = document.getElementById("myModal2");
+        const t = modalY.querySelector(".work-details");
+        var x = document.getElementsByClassName("close")[0];
+        const q = document.getElementById("searchInstitution");
+        var maxRows = 7;
+
+        s.addEventListener("click", () => {
+            modalY.style.display = "inline-flex";
+            if(q.value == ''){
+                return t.innerHTML = '<p style=color:red;text-align:center;font-family:Poppins>No result!</p>';
+            }
+            function queryData() {
+                $.ajax({
+                    url: "./php/search.php",
+                    type: "POST",
+                    data: { search: q.value },
+                    dataType: "json",
+                    success: function (response) {
+                        if (response.length > 0) {
+                            t.innerHTML = '<div style=position:fixed;left:15%;z-index:2;color:rgba(0, 0, 0, 0.7);text-align:left;font-family:Poppins>Found '+ response.length +' results!</div>';
+                            updateElement(response);
+                            return;
+                        }
+                        if(response.length >= 0){
+                            t.innerHTML = '<div style=position:fixed;left:15%;z-index:2;color:rgba(0, 0, 0, 0.7);text-align:left;font-family:Poppins>Found '+ response.length +' results!</div>';
+                        }
+                        else{
+                            t.innerHTML = '<p style=position:fixed;left:15%;z-index:2;color:rgba(0, 0, 0, 0.7);text-align:center;font-family:Poppins>No result!</p>';
+                            setTimeout( ()=>{
+                                modalY.style.display = "none";
+                                q.value = null;
+                            },1500);
+                        }
+                    },
+                    error: function (xhr, status, error) {
+                        console.log("Error: " + error);
+                    },
+                });
+            }
+            function updateElement(queries) {
+                var field = $("#searchResultField");
+                var rows = field.find("a");
+                // Remove excess rows if the table already has more than the maximum allowed rows
+                if (rows.length >= maxRows) {
+                    rows.slice(maxRows).remove();
+                }
+                $.each(queries, function (index, query) {
+                var row = "<a id='queryData' href='?accredited_school&sch_id="+ query.school_id +"'>" + query.school_name +
+                    "</a>";
+                field.append(row);
+                });
+            }
+            queryData();
+        });
+        x.onclick = function() {
+            t.innerHTML = '';
+            modalY.style.display = "none";
+        }
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modalY) {
+                t.innerHTML = '';
+                modalY.style.display = "none";
+            }
+        }
+    </script>

@@ -1,0 +1,793 @@
+body{
+    overflow-x: hidden;
+}
+a{
+    text-decoration: none;
+}
+li a{
+    color: black;
+}
+ul{
+    list-style: none;
+}
+.header-nav{
+    position: fixed;
+    width: 1380px;
+    height: 100px;
+    left: 0px;
+    top: 0px;
+    z-index: 1;
+    background-color: #fcfcfc;
+}
+.header-nav .header-nav__logo{
+    /* Auto layout */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 11px;
+
+    position: absolute;
+    width: 250px;
+    height: 50px;
+    left: 70px;
+    top: calc(50% - 50px/2);
+}
+.header-nav .header-nav__logo .logo-text{
+    /* Nigerian Lecturers */
+
+    width: 189px;
+    height: 30px;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 30px;
+    /* identical to box height */
+
+
+    color: #1B7339;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+.header-nav__logo:hover{
+    transition: .1s ease-in-out;
+    transform: translateY(-5px);
+}
+.header-nav__container .header-nav__menu{
+    /* Frame 2 */
+
+    /* Auto layout */
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 108px;
+
+    position: absolute;
+    width: 632px;
+    height: 41px;
+    left: 600px;
+    top: calc(50% - 41px/2);
+}
+.header-nav__container .header-nav__menu ul{
+    /* Frame 20 */
+
+    /* Auto layout */
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 97px;
+
+    width: 389px;
+    height: 41px;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+ul .homebutton li{
+    /* Home */
+
+    width: 42px;
+    height: 21px;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    /* identical to box height */
+
+
+    color: #FFFFFF;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+ul .homebutton{
+    /* Frame 21 */
+
+    /* Auto layout */
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
+
+    width: 45px;
+    height: 30px;
+
+    background: #1B7339;
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+ul .homebutton:hover{
+    background-color: #40CE71;
+    border-radius: 5px;
+    transition: .1s ease-in-out;
+    transform: translateY(-5px);
+}
+ul .schools li{
+    /* Schools */
+
+    width: 55px;
+    height: 21px;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    /* identical to box height */
+
+
+    color: #000000;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+ul .schools:hover{
+    transition: .1s ease-in-out;
+    transform: translateY(-5px);
+}
+ul .schools li:hover{
+    color: #1B7339;
+}
+ul .contactus{
+    /* Contact Us */
+
+    width: 78px;
+    height: 21px;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    /* identical to box height */
+
+
+    color: #000000;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 2;
+    flex-grow: 0;
+}
+ul .contactus:hover{
+    transition: .1s ease-in-out;
+    transform: translateY(-5px);
+}
+ul .contactus li:hover{
+    color: #1B7339;
+}
+ul .accreditation{
+    /* Frame 23 */
+
+    /* Auto layout */
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    gap: 10px;
+
+    width: 135px;
+    height: 20px;
+
+    background: #1B7339;
+    box-shadow: inset 0px -4px 4px #40CE71;
+    border-radius: 20px;
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 3;
+    flex-grow: 0;
+}
+ul .accreditation li{
+    /* Accreditation */
+
+    width: 95px;
+    height: 21px;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    /* identical to box height */
+
+
+    color: #D9D9D9;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+ul .accreditation:hover{
+    background-color: #40CE71;
+    border-radius: 5px;
+    transition: .1s ease-in-out;
+    transform: translateY(-5px);
+}
+.search__container{
+    /* Frame 5 */
+    /* Auto layout */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 200px 371.2px;
+    gap: 10px;
+    position: absolute;
+    width: 650px;
+    height: auto;
+    left: calc(50% - 1441px/2);
+    top: 100px;
+    background: linear-gradient(0deg, rgba(27, 115, 57, 0.5), rgba(27, 115, 57, 0.5)), url(Frame.svg);
+}
+.search__container .search__box__input{
+    /* Frame 4 */
+    /* Auto layout */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 29px 10px 26px;
+    gap: 47px;
+
+    width: 640px;
+    height: 40px;
+
+    background: #FFFFFF;
+    border-radius: 50px;
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+.search__box__input .search__box__icon{
+    /* Frame 3 */
+
+    /* Auto layout */
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    margin-left: -70px;
+    gap: 10px;
+
+    width: 34px;
+    height: 50px;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+#searchBtn:hover{
+    cursor: pointer!important;
+    transition: all .2s ease-in-out;
+    transform: scale(.85);
+}
+.search__box__input input{
+    /* Search for Institution */
+    width: 500px;
+    height: 36px;
+    position: relative;
+    left: 5%;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 36px;
+    border: none;
+    outline: none;
+    /* identical to box height */
+    color: rgba(0, 0, 0, 0.7);
+    /* Inside auto layout */
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+.search__box__input input::placeholder{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 36px;
+    color: rgba(0, 0, 0, 0.7);
+}
+.about__container{
+    /* Frame 8 */
+
+    /* Auto layout */
+
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 23px;
+
+    position: absolute;
+    max-width: 1100px;
+    height: 190px;
+    left: 70px;
+    top: 632px;
+}
+.about__container .about__box{
+    /* Frame 7 */
+
+    /* Auto layout */
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 20px;
+
+    width: 638px;
+    height: 260px;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+.about__box .about__box__title{
+    /* Frame 25 */
+
+    /* Auto layout */
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+
+    width: 398px;
+    height: 78px;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+.about__box .about__box__title h2{
+    /* Nigerian Lecturers */
+
+    width: 292px;
+    height: 27px;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 48px;
+    /* identical to box height */
+
+
+    color: #1B7339;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+.about__box .about__box__title span{
+    /* Revolutionizing Academic Accreditation */
+
+    width: 398px;
+    height: 30px;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 20px;
+    /* identical to box height */
+
+
+    color: #000000;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+.about__box .about__box__body{
+    /* About body */
+    width: 638px;
+    height: 162px;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 27px;
+
+    color: #000000;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+.about__box__image{
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  box-shadow: 0 0 50px #ccc;
+}
+.about__box__image.fade-in{
+    opacity: 1;
+}
+.about__box__image {
+    animation: fade 8s infinite;
+}
+@keyframes fade {
+    0%,
+    100% {
+      opacity: 0;
+    }
+    25%,
+    75% {
+      opacity: 1;
+    }
+  }
+.institution__container{
+    /* Rectangle 8 */
+
+    position: absolute;
+    width: 1390px;
+    height: 500px;
+    left: calc(50% - 1440px/2);
+    top: 1058px;
+
+    background: linear-gradient(0deg, rgba(27, 115, 57, 0.7), rgba(27, 115, 57, 0.7)), url(Rectangle.svg);
+}
+.institution__container .institution__box{
+    /* Group 19 */
+
+    position: absolute;
+    width: 1300px;
+    height: 89px;
+    padding-left: 50px;
+    top: 200px;
+}
+.institution__box .institution__box__right__arrow{
+    /* Right arrow */
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    left: 1330px;
+    top: 10px;
+    
+}
+.institution__box .institution__box__logo{
+    /* Group 19 */
+
+    position: absolute;
+    width: 1365px;
+    height: 199px;
+    left: 11px;
+}
+.institution__box__logo img{
+    /* Group 1 */
+
+    position: absolute;
+    width: 79.77px;
+    height: 95.97px;
+    left: 140px;
+    top: -90px;
+}
+.institution__box .institution__box__title{
+    /* Frame 26 */
+
+    /* Auto layout */
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+
+    position: absolute;
+    width: 533px;
+    height: 84px;
+    left: 150px;
+}
+.institution__box__title h2{
+    /* University of Nigeria, Nsukka */
+
+    width: 533px;
+    height: 27px;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 54px;
+    /* identical to box height */
+
+
+    color: #D9D9D9;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+.institution__box__title span{
+    /* 150 Teaching Staff */
+
+    width: 184px;
+    height: 30px;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 30px;
+    /* identical to box height */
+
+
+    color: #D9D9D9;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+.footer{
+    /* Frame 9 */
+
+    position: absolute;
+    width: 1343px;
+    height: 307px;
+    left: 0px;
+    bottom: -1205px;
+
+    background: #1B7339;
+}
+.footer__button__text{
+    /* Frame 23 */
+
+    /* Auto layout */
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px 20px;
+    gap: 10px;
+
+    position: absolute;
+    width: auto;
+    height: 20px;
+    left: 1100px;
+    top: calc(50% - 41px/2 + 2.5px);
+
+    background: #D9D9D9;
+    box-shadow: inset 0px -4px 4px #60D587;
+    border-radius: 20px;
+}
+.footer__button__text a{
+    /* Accreditation */
+
+    width: 95px;
+    height: 21px;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    /* identical to box height */
+
+
+    color: #1B7339;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+.footer__box__nav{
+    /* Frame 20 */
+
+    /* Auto layout */
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    gap: 20px;
+
+    position: absolute;
+    width: 78px;
+    height: 123px;
+    left: 681px;
+    top: 92px;
+}
+.footer__box__nav .footer__box__home__link{
+    /* Frame 21 */
+
+    /* Auto layout */
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
+
+    width: 62px;
+    height: 20px;
+
+    background: #1B7339;
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+.footer__box__home__link .footer__home{
+    /* Home */
+
+    width: 42px;
+    height: 21px;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    /* identical to box height */
+
+
+    color: #FFFFFF;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+.footer__box__nav .footer__schools{
+    /* Schools */
+
+    width: 55px;
+    height: 21px;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    /* identical to box height */
+
+
+    color: #D9D9D9;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+.footer__box__nav .footer__contactus{
+    /* Contact Us */
+
+    width: 78px;
+    height: 21px;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    /* identical to box height */
+
+
+    color: #D9D9D9;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 2;
+    flex-grow: 0;
+}
+.footer__box__logo{
+    /* Frame 19 */
+
+    /* Auto layout */
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 11px;
+
+    position: absolute;
+    width: 250px;
+    height: 50px;
+    left: 70px;
+    top: calc(50% - 50px/2 - 7.5px);
+}

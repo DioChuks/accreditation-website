@@ -1,0 +1,589 @@
+body{
+    overflow-x: hidden;
+}
+a{
+    text-decoration: none;
+}
+li a{
+    color: black;
+}
+ul{
+    list-style: none;
+}
+.header-nav{
+    position: fixed;
+    width: 1380px;
+    height: 100px;
+    left: 0px;
+    top: 0px;
+    z-index: 1;
+    background-color: #fcfcfc;
+}
+.header-nav .header-nav__logo{
+    /* Auto layout */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 11px;
+
+    position: absolute;
+    width: 250px;
+    height: 50px;
+    left: 70px;
+    top: calc(50% - 50px/2);
+}
+.header-nav .header-nav__logo .logo-text{
+    /* Nigerian Lecturers */
+
+    width: 189px;
+    height: 30px;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 30px;
+    /* identical to box height */
+
+
+    color: #1B7339;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+.header-nav__logo:hover{
+    transition: .1s ease-in-out;
+    transform: translateY(-5px);
+}
+.header-nav__container .header-nav__menu{
+    /* Frame 2 */
+    /* Auto layout */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 108px;
+    position: absolute;
+    width: 632px;
+    height: 41px;
+    left: 600px;
+    top: calc(50% - 41px/2);
+}
+.header-nav__container .header-nav__menu ul{
+    /* Frame 20 */
+    /* Auto layout */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 97px;
+    width: 389px;
+    height: 41px;
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+ul .homebutton li{
+    /* Home */
+    width: 42px;
+    height: 21px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    /* identical to box height */
+    color: #000000;
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+ul .homebutton:hover{
+    transition: .1s ease-in-out;
+    transform: translateY(-5px);
+}
+ul .homebutton a:hover{
+    color: #1B7339;
+}
+ul .schools li{
+    /* Schools */
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: normal;
+    /* identical to box height */
+    color: #D9D9D9;
+    /* Inside auto layout */
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+ul .schools{
+    /*frame 23 */
+    display: flex;
+    /*justify-content: center; */
+    align-items: flex-start;
+    padding: 10px;
+    gap: 10px;
+    background: #1B7339;
+}
+
+ul .schools:hover{
+    background-color: #40CE71;
+    border-radius: 5px;
+    transition: .1s ease-in-out;
+    transform: translateY(-5px);
+}
+ul .contactus{
+    display: flex;
+    flex-direction: row;
+    /*justify-content: center; */
+    align-items: flex-start;
+    padding: 10px;
+    gap: 10px;
+    /* Inside auto layout */
+    flex: none;
+    order: 2;
+    flex-grow: 0;
+}
+ul .contactus li{
+    /* Contact Us */
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: normal;
+    /* identical to box height */
+    color: #000000;
+    /* Inside auto layout */
+    flex: none;
+    order: 2;
+    flex-grow: 0;
+}
+ul .contactus:hover{
+    transition: .1s ease-in-out;
+    transform: translateY(-5px);
+}
+ul .contactus li:hover{
+    color: #1B7339;
+}
+ul .accreditation{
+    /* Frame 23 */
+    /* Auto layout */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    gap: 10px;
+    width: 135px;
+    height: 20px;
+    background: #1B7339;
+    box-shadow: inset 0px -4px 4px #40CE71;
+    border-radius: 20px;
+    /* Inside auto layout */
+    flex: none;
+    order: 3;
+    flex-grow: 0;
+}
+ul .accreditation li{
+    /* Accreditation */
+    width: 95px;
+    height: 21px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    /* identical to box height */
+    color: #D9D9D9;
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+ul .accreditation:hover{
+    background-color: #40CE71;
+    border-radius: 5px;
+    transition: .1s ease-in-out;
+    transform: translateY(-5px);
+}
+.school__container{
+    /* Frame 7 */
+    /* Auto layout */
+    top: 15%;
+    position: absolute;
+    width: 100%;
+    height: 300px;
+}
+.school__box{
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: inherit;
+}
+.school__box__2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 22px;
+}
+.school__box__title{
+    /* Frame 28 */
+    display: flex;
+    padding: 10px 65px;
+    align-items: flex-start;
+    gap: 10px;
+    border-bottom: 1px solid #1B7339;
+}
+.school__box__title h2{
+    color: #1B7339;
+    font-family: Poppins;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+.school__box__body p{
+    width: 795px;
+    color: #000;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.school__box__body__schools{
+    margin-top: -20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 50px;
+}
+.school__box__body__schools span{
+    color: #000;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.search__container__right{
+    /* Frame 4 */
+    position: relative;
+    height: 380px;
+    top: 350px;
+    margin-top: 10%;
+}
+.search__box__icon__right{
+    display: flex;
+    width: 30px;
+    height: 14px;
+    padding: 1.621px 1.434px 1.167px 1.621px;
+    justify-content: center;
+    align-items: center;
+}
+.search__box__input__right{
+    display: inline-flex;
+    margin-left: 72.5%;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    border-radius: 50px;
+    background: rgba(27, 115, 57, 0.25);
+}
+.search__box__input__right input{
+    /* Search for Institution */
+    width: auto;
+    height: 18px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 14px;
+    border: none;
+    border-left: 1px solid #000;
+    outline: none;
+    /* identical to box height */
+    color: rgba(0, 0, 0, 0.7);
+    background-color: transparent;
+}
+.search__box__input__right input::placeholder{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 13px;
+    color: rgba(0, 0, 0, 0.7);
+}
+.institution__table__container{
+    position: relative;
+}
+.institution__table__container .institution__table__content{
+    position: relative;
+    left: 14%;
+    margin-top: 30px;
+}
+.institution__table__content .institution__table__head{
+    display: inline-flex;
+    align-items: center;
+    gap: 171px;
+}
+.institution__table__head .table__head__title{
+    display: flex;
+    align-items: flex-start;
+    gap: 227px;
+    color: rgba(0, 0, 0, 0.50);
+    text-align: center;
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.table__data__container{
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+}
+.table__data__container .table__data{
+    width: 430%;
+    margin-left: -30%;
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 197px;
+}
+.table__data.styled{
+    background-color: #D9D9D9;
+}
+.table__data.styled:hover{
+    background-color: #FFFFFF;
+}
+.table__data:hover{
+    cursor: pointer!important;
+    transition: 0.2s ease-in-out;
+    background-color: #D9D9D9;
+    box-shadow: 1px 2px 2px rgb(181, 172, 172);
+}
+.table__data .table__data__text{
+    padding: 10px;
+    gap: 10px;
+    position: relative;
+    color: #000;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.table__data__text.institution{
+    margin-left: 30px;
+    width: 200px;
+}
+.table__data__text.location{
+    margin-left: -70px;
+    position: absolute;
+    left: 28%;
+    width: 200px;
+}
+.table__data__text.typeof{
+    margin-left: -30px;
+    position: absolute;
+    right: 35%;
+    width: 200px;
+}
+.table__data__text.staff{
+    position: absolute;
+    right: 18%;
+}
+.pagination{
+    margin-top: 30px;
+    margin-left: 45%;
+    margin-bottom: 50px;
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 28px;
+    color: #463F3F;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.footer{
+    /* Frame 9 */
+
+    position: absolute;
+    width: 1343px;
+    height: 307px;
+    left: 0px;
+    background: #1B7339;
+}
+.footer__button__text{
+    /* Frame 23 */
+    /* Auto layout */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px 20px;
+    gap: 10px;
+
+    position: absolute;
+    width: auto;
+    height: 20px;
+    left: 1100px;
+    top: calc(50% - 41px/2 + 2.5px);
+    background: #D9D9D9;
+    box-shadow: inset 0px -4px 4px #60D587;
+    border-radius: 20px;
+}
+.footer__button__text a{
+    /*text style */
+    color: #1B7339;
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.footer__box__nav{
+    /* Frame 20 */
+
+    /* Auto layout */
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    gap: 20px;
+
+    position: absolute;
+    width: 78px;
+    height: 123px;
+    left: 681px;
+    top: 92px;
+}
+.footer__box__nav .footer__box__home__link{
+    /* Frame 21 */
+
+    /* Auto layout */
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
+
+    width: 62px;
+    height: 20px;
+
+    background: #1B7339;
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+.footer__box__home__link .footer__home{
+    /* Home */
+
+    width: 42px;
+    height: 21px;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    /* identical to box height */
+
+
+    color: #FFFFFF;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+.footer__box__nav .footer__schools{
+    /* Schools */
+
+    width: 55px;
+    height: 21px;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    /* identical to box height */
+
+
+    color: #D9D9D9;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+.footer__box__nav .footer__contactus{
+    /* Contact Us */
+
+    width: 78px;
+    height: 21px;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    /* identical to box height */
+
+
+    color: #D9D9D9;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 2;
+    flex-grow: 0;
+}
+.footer__box__logo{
+    /* Frame 19 */
+
+    /* Auto layout */
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 11px;
+
+    position: absolute;
+    width: 250px;
+    height: 50px;
+    left: 70px;
+    top: calc(50% - 50px/2 - 7.5px);
+}
