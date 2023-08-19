@@ -14,6 +14,7 @@ elseif(isset($_GET['accreditation'])){
 elseif(isset($_GET['join_accreditation'])){
     $css = './styles/join.css';
     $page = './views/join_accreditation.php';
+    include_once('php/connection.php');
 }
 elseif(isset($_GET['accredited_school'])){
     $css = './styles/ind-school.css';
