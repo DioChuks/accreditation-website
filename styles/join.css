@@ -240,7 +240,7 @@ ul .accreditation li:hover{
     align-items: flex-start;
     gap: 20px;
 }
-.accreditation__form form input, textarea{
+.accreditation__form form input, textarea, .container{
     display: flex;
     width: 200px;
     padding: 15px 706px 15px 50px;
@@ -251,6 +251,55 @@ ul .accreditation li:hover{
     border-bottom: 2px solid #1B7339;
     background: rgba(27, 115, 57, 0.20);
 }
+form .container{
+    display: flex;
+    justify-content: center;
+    align-items: absolute;
+}
+.container .select select {
+    /* Reset Select */
+    appearance: none;
+    outline: none;
+    border: 0;
+    box-shadow: none;
+    /* Personalize */
+    flex: 1;
+    padding: 0 1em;
+    color: rgba(0, 0, 0, 0.70);
+    font-family: Poppins;
+    background: rgba(27, 115, 57, 0.20);
+    background-image: none;
+    cursor: pointer;
+  }
+  /* Remove IE arrow */
+  select::-ms-expand {
+    display: none;
+  }
+  /* Custom Select wrapper */
+  .container .select {
+    position: relative;
+    display: flex;
+    width: inherit;
+    height: inherit;
+    border-radius: .25em;
+    overflow: hidden;
+  }
+  /* Arrow */
+  .select::after {
+    content: '\25BC';
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 1em;
+    color: orange;
+    background-color: #34495e;
+    transition: .25s all ease;
+    pointer-events: none;
+  }
+  /* Transition */
+  .select:hover::after {
+    color: #40CE71;
+  }
 .accreditation__form form input::placeholder, textarea::placeholder{
     color: rgba(0, 0, 0, 0.70);
     font-family: Poppins;

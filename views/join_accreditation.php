@@ -1,3 +1,9 @@
+<?php
+$sql_inst = "SELECT * FROM tbl_schools";
+$stmt = $conn->prepare($sql_inst);
+$stmt->execute(); 
+$result = $stmt->get_result();
+?>
     <section class="accreditation__form__section">
         <!-- Accreditation Form -->
         <div class="accreditation__form__heading">
@@ -6,6 +12,20 @@
         <div class="accreditation__form">
             <form id="joinForm" method="post" enctype="multipart/form-data">
                 <input type="text" placeholder="Name" name="profile_name" id="profileName">
+                <div class="container">
+                    <div class="select">
+                        <select name="school_id" id="selectSchool" required>
+                            <option value="">Select Institution</option>
+                        <?php
+                        while ($row = $result->fetch_assoc()) {
+                            echo "<option value='".$row['sch_id']."'>".$row['sch_name']."</option>";
+                        }
+                        $stmt->close();
+                        $conn->close();
+                        ?>
+                        </select>
+                    </div>
+                </div>
                 <input type="text" placeholder="Faculty" name="faculty" id="faculty">
                 <input type="text" placeholder="Department" name="dept" id="dept">
                 <input type="text" placeholder="Number of Teaching Years" name="experience" id="experience">
