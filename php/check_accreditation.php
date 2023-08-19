@@ -6,6 +6,7 @@
       return $resultData;
     }
     $profile_name = validateData($_POST['profile_name']);
+    $sch_id = validateData($_POST['school_id']);
     $faculty = validateData($_POST['faculty']);
     $dept = validateData($_POST['dept']);
     $about_profile = validateData($_POST['about_profile']);
@@ -57,7 +58,7 @@
             $work_id = $row_work_id['work_id'];
             // insert into profile table
             $insert_profile_sql = "INSERT INTO tbl_profile ( sch_id ,  cert_id ,  work_id ,  name_profile ,  faculty ,  department ,  teaching_years ,  about_profile ,  about_extra_profile ,  profile_image ,  qualification ) 
-            VALUES (1,'$cert_id','$work_id','$profile_name','$faculty','$dept','$teaching_years','$about_profile','$extra_about','$profile_img_url','Professor')";
+            VALUES ('$sch_id','$cert_id','$work_id','$profile_name','$faculty','$dept','$teaching_years','$about_profile','$extra_about','$profile_img_url','Professor')";
             $run_insert_profile = mysqli_query($conn, $insert_profile_sql);
             if (!$run_insert_profile){
                 echo '<script>alert("Something went wrong!")</script>';
